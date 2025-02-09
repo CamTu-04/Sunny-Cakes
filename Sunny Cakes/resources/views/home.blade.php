@@ -110,8 +110,8 @@
 <body>
 
     <div class="logo">
-        <img src="SunnyCake.png" alt="Logo"> 
-        <div class="store-name">Sunny Cakes</div>
+        <img src="Sunny Cakes/SunnyCake.png" > 
+        <div class="store-name">「 ✦ Sunny Bakery ✦ 」</div>
         <div class="contact-info">SĐT: 0123 456 789</div>
     </div>
 
