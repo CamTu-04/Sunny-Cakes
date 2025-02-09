@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: white;
             color: #333;
         }
         .logo {
@@ -17,8 +17,8 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px;
-            background: #e9ecef;
-            margin: 20px 0;
+            background-color: rgba(252, 204, 204, 0.9); 
+            margin: 0px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .logo img {
@@ -33,6 +33,7 @@
             background: linear-gradient(to right, red, black);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 4px 4px 8px rgba(90, 73, 73, 0.6); /* Thêm hiệu ứng đổ bóng */
         }
         .contact-info {
             width: 30%; /* Chiếm 1.5/5 chiều ngang */
@@ -49,7 +50,7 @@
             padding: 0; /* Bỏ padding để hình ảnh chiếm toàn bộ chiều cao */
             margin: 20px auto; /* Tự động căn giữa */
             width: 100%; 
-            height: 400px;
+            height: 500px;
             max-width: 100%; /* Giới hạn chiều rộng tối đa */
             display: flex; /* Sử dụng flexbox để căn chỉnh hình ảnh */
             justify-content: center; /* Căn giữa hình ảnh */
@@ -64,8 +65,6 @@
         .scrolling-text {
             white-space: nowrap; /* Đảm bảo văn bản không xuống dòng */
             overflow: hidden; /* Ẩn phần thừa của văn bản */
-            box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
-            position: relative; /* Cần thiết để đặt vị trí cho văn bản */
             height: 100px; /* Chiều cao cho khung văn bản */
             background: linear-gradient(to right, red, black);
             -webkit-background-clip: text;
@@ -83,71 +82,80 @@
                 transform: translateX(-100%); /* Kết thúc ở bên trái */
             }
         }
-        .main-container {
-            display: flex;
-            width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
-            margin-top: 10px; /* Giảm khoảng cách giữa các khung */
+        .container1{
+            width: 100%;
+            margin-top: 40px;
+            background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-rose-petals-gradient-pink-banner-background-picture-image_1024194.jpg");
+            background-size: contain; /* Thay 'contain' bằng 'cover' để hình nền bao phủ */
+            background-position: center; /* Căn giữa hình nền */
+            display: flex; /* Kích hoạt Flexbox */
+            flex-direction: column; /* Căn theo chiều dọc */
+            align-items: center; /* Căn giữa nội dung theo chiều ngang */
         }
-        .sidebar {
-            width: 20%; 
-            padding: 0; /* Padding = 0 */
-            margin: 0; /* Margin = 0 */
-            background-color: white; /* Màu nền cho khung bên trái */
+
+        .main-container1{
+            display: flex;
+            width: 80%; 
+            justify-content: center; /* Căn giữa nội dung */
+            margin-top: 10px; /* Khoảng cách giữa các phần */
         }
         .product-intro {
-            width: 80%; 
-            padding: 0; /* Padding = 0 */
+            display: flex;
+            flex-wrap: wrap; /* Cho phép nhiều hàng */
+            justify-content: space-between; /* Căn đều không gian giữa các cột */
+            width: 100%; 
+            padding: 10px; /* Một chút padding cho khung */
             margin: 0; /* Margin = 0 */
-            background-color: #ffffff; /* Màu nền trắng */
-            display: flex;
-            flex-direction: column;
+            background-color: none; /* Màu nền trắng */
         }
-        .info-box {
-            flex-grow: 1; /* Cho phép khung chiếm toàn bộ không gian còn lại */
+        .product-box {
+            width: 20%; /* Chiếm 30% chiều rộng khung cho mỗi cột */
+            margin-bottom: 20px; /* Khoảng cách giữa các hàng */
+            background: none;
+            padding: 10px; /* Padding bên trong */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho sản phẩm */
+            border-radius: 5px; /* Bo góc cho sản phẩm */
             display: flex;
-            align-items: stretch; /* Căn giữa nội dung theo chiều dọc */
-            padding: 0; /* Bỏ padding */
-            width: 100%; /* Chiếm toàn bộ chiều rộng */
+            flex-direction: column; /* Để nội dung xếp chồng lên nhau */
+            align-items: center; /* Căn giữa nội dung */
         }
-        .info-box.red {
+        .product-box img {
+            width: 100%; /* Ảnh chiếm toàn bộ chiều rộng khung sản phẩm */
+            height: auto; /* Giữ tỷ lệ hình ảnh */
+            object-fit: cover; /* Giữ tỷ lệ hình ảnh mà không bị kéo méo */
+        }
+        .product-description {
+            text-align: center; /* Căn giữa mô tả */
+            margin-top: 10px; /* Khoảng cách giữa ảnh và mô tả */
             background: linear-gradient(to right, red, black);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; /* Màu nền cho khung văn bản */
+            -webkit-text-fill-color: transparent;
         }
-        .info-box.black {
-            background: linear-gradient(to right, red, black);
-            -webkit-background-clip: text;/* Màu nền cho khung văn bản */ 
-            -webkit-text-fill-color: transparent; 
+        .body5 {
+            margin-top: 0px;
+            padding: 0px;
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background-color: none;
         }
-        .red-content {
-            display: flex;
-            width: 100%; /* Chiếm toàn bộ chiều rộng */
+
+        .child_B5 {
+            margin-left: 20px;
+            padding-left: 40px;
+            border-left: 1px solid  #0e5e0e; 
+            font-family: lato;
+            color: #0e5e0e;
+            font-size: 19px;
+            justify-content: center; 
+            align-items: center; 
         }
-        .red-content img {
-            width: 20%; /* Chiếm 20% chiều rộng khung */
-            height: 100%; /* Chiều cao 100% */
-            object-fit: cover; /* Giữ tỷ lệ hình ảnh mà không bị kéo méo */
-        }
-        .red-description {
-            padding: 0 10px; /* Padding bên trái và bên phải */
-            display: flex;
-            align-items: center; /* Căn giữa theo chiều dọc */
-            width: 80%; /* Chiếm 80% chiều rộng khung */
-        }
-        .black-content {
-            display: flex;
-            width: 100%; /* Chiếm toàn bộ chiều rộng */
-        }
-        .black-content img {
-            width: 20%; /* Chiếm 20% chiều rộng khung */
-            height: 100%; /* Chiều cao 100% */
-            object-fit: cover; /* Giữ tỷ lệ hình ảnh mà không bị kéo méo */
-        }
-        .black-description {
-            padding: 0 10px; /* Padding bên trái và bên phải */
-            display: flex;
-            align-items: center; /* Căn giữa theo chiều dọc */
-            width: 80%; /* Chiếm 80% chiều rộng khung */
+        .container2{
+            width: 100%;
+            background-image: url("https://img.interiorgoodsdirect.com/image-system/zoom/venetian/swatch-1600/swatch-1600/touched_by_design_premier_piano_white_high_gloss.jpg");
+            background-size: contain; /* Thay 'contain' bằng 'cover' để hình nền bao phủ */
+            background-position: center; /* Căn giữa hình nền */
+
         }
     </style>
 </head>
@@ -161,47 +169,67 @@
         <img class="promotion-image" src="https://theme.hstatic.net/200000179809/1001074516/14/collection_banner.jpg?v=98" alt="Ưu đãi">
     </div>
     <div class="scrolling-text">
-        ´꒳` Các sản phẩm bánh ngọt của chúng tôi 𓍯𓂃𓏧♡
+        Các sản phẩm bánh ngọt của chúng tôi
     </div>
-    <div class="main-container">
-        <div class="sidebar">
-            <h3>Thông tin thêm</h3>
-            <p>Các sản phẩm mới nhất, ưu đãi và nhiều hơn nữa.</p>
-            <!-- Thêm thông tin bên trái ở đây -->
+    <div class="container1">
+        <h2>Các sản phẩm bán chạy</h2>
+        <div class="main-container1">
+            <div class="product-intro">
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/hawaii_mousse_0b7634f35012441cacaf833c24b4a793_grande.png" alt="Bánh 1">
+                    <div class="product-description">Hawaii mousse</div>
+                </div>
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/dd525367-1d09-4c51-9e38-d8625bbadd0a_a9424dae1a8e46859efdbf10dc8b20e2_grande.jpg" alt="Bánh 2">
+                    <div class="product-description">Passion fruit mousse</div>
+                </div>
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/tiramisu_cake_16a01603c84a4217826a59da6c6f6cfd_grande.jpg" alt="Bánh 3">
+                    <div class="product-description">Tiramisu Cake</div>
+                </div>
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/seasonal_fruit_cake_2e127af76a234fe9b261d154309456ed_grande.png" alt="Bánh 4">
+                    <div class="product-description">Seasonal fruit Cake</div>
+                </div>
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/red_velvet_cake_04dccd0577264305bf1b9a6b59f25a39_grande.jpg" alt="Bánh 5">
+                    <div class="product-description">Red velvet Cake</div>
+                </div>
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/mango_fruit_cake_031fc926091b4698a1a7099521ad8764_grande.jpg" alt="Bánh 6">
+                    <div class="product-description">Mango fruit Cake</div>
+                </div>
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/chocolate___strawberry_charlotte_b8e54856d0704deeb93f9d09ffa125e4_grande.png" alt="Bánh 7">
+                    <div class="product-description">Chocolate&Strawberry charlotte</div>
+                </div>
+                <div class="product-box">
+                    <img src="https://product.hstatic.net/1000104153/product/socola_cake_dd9dfa9425e846c0950d6978d7a2981d_grande.jpg" alt="Bánh 8">
+                    <div class="product-description">Socola Cake</div>
+                </div>
+            </div>
         </div>
-        <div class="product-intro">
-            <div class="info-box red">
-                <div class="red-content">
-                    <img src="https://product.hstatic.net/1000104153/product/tropical_forest_cake_748bf1e0840b49afa81a57b6a9aae165_grande.png" alt="Ảnh 1">
-                    <div class="red-description">
-                        <h2>Tropical Forest cake</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="info-box black">
-                <div class="black-content">
-                    <div class="black-description">
-                        <h2>Passion fruit & chocolate cake</h2>
-                    </div>
-                    <img src="https://product.hstatic.net/1000104153/product/passion_fruit___chocolate_cake_81a17ce02408407b8ac29d61cd7abd9b_master.png" alt="Ảnh 2">
-                </div>
-            </div>
-            <div class="info-box red">
-                <div class="red-content">
-                    <img src="https://product.hstatic.net/1000104153/product/tiramisu_cake_16a01603c84a4217826a59da6c6f6cfd_grande.jpg" alt="Ảnh 3">
-                    <div class="red-description">
-                        <h2>Mango Plum - Entremet Thanh Trà</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="info-box black">
-                <div class="black-content">
-                    <div class="black-description">Mô tả nội dung màu đen</div>
-                    <img src="https://product.hstatic.net/200000179809/product/banh_da_sac_3cf87e6084654be2856e7bd7c2ffd3f1_70e5460aecc04fdabc87e2bc9f29b4ef_grande.png" alt="Ảnh 4">
-                </div>
-            </div>
-            <!-- Thêm nhiều khung nếu cần -->
+    </div>
+    <div class = "body5">
+        <div class = "child_B5" style="border-left: none;"8>
+            <p><ul><li>🍃Sáng tạo</li></ul></p>
+            <p>Luôn thay đổi và hiện đại</p>
         </div>
+        <div class = "child_B5">
+            <p><ul><li>🌿Thực hiện bởi những nghệ nhân</li></ul></p>
+            <p>Tạo ra những sản phẩm xinh xắn </p>
+        </div>
+        <div class = "child_B5">
+            <p><ul><li>💚Tận tâm phục vụ</li></ul></p>
+            <p>Chỉ cần bạn nhớ đến chúng tôi</p>
+        </div>
+        <div class = "child_B5">
+            <p><ul><li>🕙Vận chuyển 24h</li></ul></p>
+            <p>Giao đúng nơi, tới đúng hẹn</p>
+        </div>
+    </div>
+    <div class="container2">
+        <h1>Hello</h1>
     </div>
 </body>
 </html>
