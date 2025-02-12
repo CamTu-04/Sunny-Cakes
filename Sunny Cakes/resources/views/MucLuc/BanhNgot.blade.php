@@ -12,6 +12,8 @@
             background-color: white;
             color: #333;
         }
+
+        /*Tiêu đề*/
         .logo {
             display: flex;
             align-items: center;
@@ -45,12 +47,14 @@
         a {
             text-decoration: none; /* Bỏ gạch chân cho liên kết */
         }
+
+        /*Phông bạt*/
         .promotions {
             background: #f8f9fa;
             padding: 0; /* Bỏ padding để hình ảnh chiếm toàn bộ chiều cao */
-            margin: 20px auto; /* Tự động căn giữa */
+            margin: 0px auto; /* Tự động căn giữa */
             width: 100%; 
-            height: 500px;
+            height: 450px;
             max-width: 100%; /* Giới hạn chiều rộng tối đa */
             display: flex; /* Sử dụng flexbox để căn chỉnh hình ảnh */
             justify-content: center; /* Căn giữa hình ảnh */
@@ -62,6 +66,8 @@
             height: 100%; /* Giữ tỷ lệ hình ảnh */
             max-height: 100%; /* Đảm bảo hình ảnh không vượt quá chiều cao khung */
         }
+
+        /*Chạy chữ*/
         .scrolling-text {
             white-space: nowrap; /* Đảm bảo văn bản không xuống dòng */
             overflow: hidden; /* Ẩn phần thừa của văn bản */
@@ -82,7 +88,9 @@
                 transform: translateX(-100%); /* Kết thúc ở bên trái */
             }
         }
-        .container1{
+
+        /*Khung bán chạy*/
+        .container{
             width: 100%;
             margin-top: 40px;
             background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-rose-petals-gradient-pink-banner-background-picture-image_1024194.jpg");
@@ -93,7 +101,7 @@
             align-items: center; /* Căn giữa nội dung theo chiều ngang */
         }
 
-        .main-container1{
+        .main-container{
             display: flex;
             width: 80%; 
             justify-content: center; /* Căn giữa nội dung */
@@ -131,6 +139,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /*Khung niềm tin*/
         .body5 {
             margin-top: 0px;
             padding: 0px;
@@ -150,13 +160,44 @@
             justify-content: center; 
             align-items: center; 
         }
-        .container2{
-            width: 100%;
-            background-image: url("https://img.interiorgoodsdirect.com/image-system/zoom/venetian/swatch-1600/swatch-1600/touched_by_design_premier_piano_white_high_gloss.jpg");
-            background-size: contain; /* Thay 'contain' bằng 'cover' để hình nền bao phủ */
-            background-position: center; /* Căn giữa hình nền */
 
+        /*Khung sp cuộn*/
+        .scrolling-products {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            background-color: white;
+            padding: 20px 0;
         }
+        .products-container {
+            display: flex;
+            gap: 100px;
+            animation: scroll-left 17s linear infinite;
+        }
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .product-item {
+            flex: 0 0 auto;
+            width: 200px;
+            text-align: center;
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .scrolling-products:hover .products-container {
+            animation-play-state: paused;
+        }
+        
     </style>
 </head>
 <body>
@@ -171,9 +212,9 @@
     <div class="scrolling-text">
         Các sản phẩm bánh ngọt của chúng tôi
     </div>
-    <div class="container1">
+    <div class="container">
         <h2>Các sản phẩm bán chạy</h2>
-        <div class="main-container1">
+        <div class="main-container">
             <div class="product-intro">
                 <div class="product-box">
                     <img src="https://product.hstatic.net/1000104153/product/hawaii_mousse_0b7634f35012441cacaf833c24b4a793_grande.png" alt="Bánh 1">
@@ -228,8 +269,36 @@
             <p>Giao đúng nơi, tới đúng hẹn</p>
         </div>
     </div>
-    <div class="container2">
-        <h1>Hello</h1>
+    <div class="scrolling-products">
+        <div class="products-container" id="products"></div>
     </div>
+    <script>
+        const products = [
+            { src: "https://product.hstatic.net/1000104153/product/060b4193-9b9c-45db-9d42-aaca342699ad_eaebe617eb7e4039992a2fccc3457d76_grande.jpg", name: "Black Forest cake" },
+            { src: "https://product.hstatic.net/1000104153/product/green_tea_cheese_cake_2fcf366c3e214cfeb6c44e847059e273_grande.png", name: "Green tea cheese cake" },
+            { src: "https://product.hstatic.net/1000104153/product/vanilla_cheese_cake_6_pax_cdee19e640b645378df936cef0281fc2_grande.jpg", name: "Vanilla Cheese Cake" },
+            { src: "https://product.hstatic.net/1000104153/product/apple_crepe_dbdd671a3ead429a8aad22c0b6201d07_grande.jpg", name: "Apple Crepe" },
+            { src: "https://product.hstatic.net/1000104153/product/banh_custard_bun_6cb7c796ffe8413e86a318f4c10ed386_grande.jpg", name: "Custard Bun Cake" },
+            { src: "https://product.hstatic.net/1000104153/product/banh_donut_chocolate_den_05fa3ff0e45d428d80374c2014958fe1_grande.jpg", name: "Donut Chocolate" },
+            { src: "https://product.hstatic.net/1000104153/product/banh_donut_xoai_9d3e624a625d471b82ee4f2d1d967440_grande.jpg", name: "Donut Mango" },
+            { src: "https://product.hstatic.net/1000104153/product/cake-chuoi_1d9d7eae669d4cd0a1f3f2facd1da4c6_grande.png", name: "Banana Cake" },
+            { src: "https://product.hstatic.net/1000104153/product/madeleine-vani_327175c128034aed885e376f621a3fc3_grande.png", name: "Madeleine Cake" },
+            { src: "https://product.hstatic.net/1000104153/product/caramel_0009b29de5c049f0bc60b64592d03ffd_grande.jpg", name: "Creme Caramel" }
+        ];
+        
+        function renderProducts() {
+            const container = document.getElementById("products");
+            container.innerHTML = "";
+            for (let i = 0; i < 10; i++) { // Nhân bản sản phẩm nhiều lần để tạo hiệu ứng lặp mượt
+                products.forEach(product => {
+                    let div = document.createElement("div");
+                    div.className = "product-item";
+                    div.innerHTML = `<img src="${product.src}" alt="${product.name}"><p>${product.name}</p>`;
+                    container.appendChild(div);
+                });
+            }
+        }
+        renderProducts();
+    </script>
 </body>
 </html>
